@@ -22,6 +22,7 @@ Route::controller(AdminController::class)->group(function () {
 /*Suppliers All Routes */
 Route::controller(SupplierController::class)->group(function () {
     Route::get('/supplier/all', 'SupplierAll')->name('supplier.all');
+    Route::get('/supplier/add', 'SupplierAdd')->name('supplier.add');
 });
 
 Route::get('/dashboard', function () {
