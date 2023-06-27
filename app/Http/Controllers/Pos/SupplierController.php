@@ -40,4 +40,30 @@ class SupplierController extends Controller
 
         return redirect()->route('supplier.all')->with($notification);
     }
+
+    public function SupplierEdit($id)
+    {
+        $supplier = Supplier::findOrfail($id);
+        return view('backend.supplier.supplier_edit', compact('supplier'));
+    }
+
+    public function SupplierUpdate(Request $request)
+    {
+        $supplierId = $request->id;
+        Supplier::findOrfail($supplierId)->update([
+            'name' => $request->name,
+            'mobile_no' => $request->mobile_no,
+            'email' => $request->email,
+            'address' => $request->address,
+            'created_by' => Auth::user()->id,
+            'created_at' => Carbon::now(),
+        ]);
+
+        $notification = array(
+            'message' => 'Supplier Updated Successfully!',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('supplier.all')->with($notification);
+    }
 }
