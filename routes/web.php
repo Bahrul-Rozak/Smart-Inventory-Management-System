@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Pos\CustomerController;
 use App\Http\Controllers\Pos\SupplierController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +28,11 @@ Route::controller(SupplierController::class)->group(function () {
     Route::get('/supplier/edit/{id}', 'SupplierEdit')->name('supplier.edit');
     Route::post('/supplier/update', 'SupplierUpdate')->name('supplier.update');
     Route::get('/supplier/delete/{id}', 'SupplierDelete')->name('supplier.delete');
+});
+
+/*Customers All Routes */
+Route::controller(CustomerController::class)->group(function () {
+    Route::get('/customer/all', 'CustomerAll')->name('customer.all');
 });
 
 Route::get('/dashboard', function () {
