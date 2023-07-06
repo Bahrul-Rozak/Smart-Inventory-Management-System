@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Pos\CategoryController;
 use App\Http\Controllers\Pos\CustomerController;
 use App\Http\Controllers\Pos\SupplierController;
 use App\Http\Controllers\Pos\UnitController;
@@ -49,6 +50,11 @@ Route::controller(UnitController::class)->group(function () {
     Route::get('/unit/edit/{id}', 'UnitEdit')->name('unit.edit');
     Route::post('/unit/update', 'UnitUpdate')->name('unit.update');
     Route::get('/unit/delete/{id}', 'UnitDelete')->name('unit.delete');
+});
+
+/*Categories All Routes */
+Route::controller(CategoryController::class)->group(function () {
+    Route::get('/category/all', 'CategoryAll')->name('category.all');
 });
 
 Route::get('/dashboard', function () {
