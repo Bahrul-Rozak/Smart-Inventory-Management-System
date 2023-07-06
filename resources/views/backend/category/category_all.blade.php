@@ -31,13 +31,13 @@
                                             <td> {{ $key + 1 }} </td>
                                             <td> {{ $item->name }} </td>
                                             <td>
-                                                <a href="{{ route('unit.edit', $item->id) }}" class="btn btn-info sm"
+                                                <a href="{{ route('category.edit', $item->id) }}" class="btn btn-info sm"
                                                     title="Edit Data"> <i class="fas fa-edit"></i> </a>
 
-                                                <a href="{{ route('unit.delete', $item->id) }}" class="btn btn-danger sm"
-                                                    title="Delete Data" id="delete"> <i class="fas fa-trash-alt"></i>
+                                                <a href="{{ route('category.delete', $item->id) }}"
+                                                    class="btn btn-danger sm" title="Delete Data" id="delete"> <i
+                                                        class="fas fa-trash-alt"></i>
                                                 </a>
-
                                             </td>
                                         </tr>
                                     @endforeach
