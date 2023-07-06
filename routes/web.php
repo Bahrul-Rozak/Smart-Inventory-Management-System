@@ -44,6 +44,8 @@ Route::controller(CustomerController::class)->group(function () {
 /*Units All Routes */
 Route::controller(UnitController::class)->group(function () {
     Route::get('/unit/all', 'UnitAll')->name('unit.all');
+    Route::get('/unit/add', 'UnitAdd')->name('unit.add');
+    Route::post('/unit/store', 'UnitStore')->name('unit.store');
 });
 
 Route::get('/dashboard', function () {
