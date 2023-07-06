@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Pos\CustomerController;
 use App\Http\Controllers\Pos\SupplierController;
+use App\Http\Controllers\Pos\UnitController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,6 +39,11 @@ Route::controller(CustomerController::class)->group(function () {
     Route::get('/customer/edit/{id}', 'CustomerEdit')->name('customer.edit');
     Route::post('/customer/update', 'CustomerUpdate')->name('customer.update');
     Route::get('/customer/delete/{id}', 'CustomerDelete')->name('customer.delete');
+});
+
+/*Units All Routes */
+Route::controller(UnitController::class)->group(function () {
+    Route::get('/unit/all', 'UnitAll')->name('unit.all');
 });
 
 Route::get('/dashboard', function () {
