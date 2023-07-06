@@ -55,6 +55,8 @@ Route::controller(UnitController::class)->group(function () {
 /*Categories All Routes */
 Route::controller(CategoryController::class)->group(function () {
     Route::get('/category/all', 'CategoryAll')->name('category.all');
+    Route::get('/category/add', 'CategoryAdd')->name('category.add');
+    Route::post('/category/store', 'CategoryStore')->name('category.store');
 });
 
 Route::get('/dashboard', function () {
