@@ -66,4 +66,14 @@ class PurchaseController extends Controller
         );
         return redirect()->route('purchase.all')->with($notification);
     }
+
+    public function PurchaseDelete($id)
+    {
+        Purchase::findOrFail($id)->delete();
+        $notification = array(
+            'message' => 'Data Save Successfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
+    }
 }
