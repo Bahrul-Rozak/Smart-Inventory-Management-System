@@ -29,13 +29,14 @@
                 <li>
                     <a href="index.html" class="waves-effect">
                         <i class="ri-dashboard-line"></i><span class="badge rounded-pill bg-success float-end">3</span>
-                        <span>🔓 Dashboard</span>
+                        <span>Dashboard</span>
                     </a>
                 </li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <span>🔓 Manage Suppliers</span>
+                        <i class="fas fa-warehouse"></i>
+                        <span>Manage Suppliers</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('supplier.all') }}">All Suppliers</a></li>
@@ -44,7 +45,8 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <span>🔓 Manage Customers</span>
+                        <i class="fas fa-user"></i>
+                        <span>Manage Customers</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('customer.all') }}">All Customers</a></li>
@@ -53,7 +55,8 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <span>🔓 Manage Units</span>
+                        <i class="fas fa-box"></i>
+                        <span>Manage Units</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('unit.all') }}">All Units</a></li>
@@ -62,7 +65,8 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <span>🔓 Manage Categories</span>
+                        <i class="fas fa-filter"></i>
+                        <span>Manage Categories</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('category.all') }}">All Categories</a></li>
@@ -71,7 +75,8 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <span>🔓 Manage Products</span>
+                        <i class="fas fa-boxes"></i>
+                        <span>Manage Products</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('product.all') }}">All Products</a></li>
@@ -80,7 +85,8 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <span>🔐 Manage Purchases</span>
+                        <i class="fas fa-money-check"></i>
+                        <span>Manage Purchases</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('purchase.all') }}">All Purchases</a></li>
