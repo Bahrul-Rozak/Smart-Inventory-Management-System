@@ -76,4 +76,11 @@ class PurchaseController extends Controller
         );
         return redirect()->back()->with($notification);
     }
+
+    public function PurchasePending()
+    {
+
+        $allData = Purchase::orderBy('date', 'desc')->orderBy('id', 'desc')->where('status', '0')->get();
+        return view('backend.purchase.purchase_pending', compact('allData'));
+    }
 }
