@@ -13,7 +13,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <a href="{{ route('product.add') }}" class="btn btn-dark btn-rounded waves-effect waves-light"
+                            <a href="{{ route('purchase.add') }}" class="btn btn-dark btn-rounded waves-effect waves-light"
                                 style="float:right;">Add Purchase </a> <br> <br>
                             <h4 class="card-title">Purchase All Data </h4>
                             <table id="datatable" class="table table-bordered dt-responsive nowrap"
