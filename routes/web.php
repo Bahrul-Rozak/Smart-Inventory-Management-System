@@ -70,6 +70,7 @@ Route::controller(ProductController::class)->group(function () {
     Route::post('/product/store', 'ProductStore')->name('product.store');
     Route::get('/product/edit/{id}', 'ProductEdit')->name('product.edit');
     Route::post('/product/update', 'ProductUpdate')->name('product.update');
+    Route::get('/product/delete/{id}', 'ProductDelete')->name('product.delete');
 });
 
 Route::get('/dashboard', function () {
