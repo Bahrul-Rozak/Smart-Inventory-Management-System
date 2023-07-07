@@ -10,7 +10,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Add Product Page </h4><br><br>
-                            <form method="post" action="{{ route('supplier.store') }}" id="myForm">
+                            <form method="post" action="{{ route('product.store') }}" id="myForm">
                                 @csrf
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Product Name </label>
