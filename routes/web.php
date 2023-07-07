@@ -66,6 +66,7 @@ Route::controller(CategoryController::class)->group(function () {
 /*Products All Routes */
 Route::controller(ProductController::class)->group(function () {
     Route::get('/product/all', 'ProductAll')->name('product.all');
+    Route::get('/product/add', 'ProductAdd')->name('product.add');
 });
 
 Route::get('/dashboard', function () {
