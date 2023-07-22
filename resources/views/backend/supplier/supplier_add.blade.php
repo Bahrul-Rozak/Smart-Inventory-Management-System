@@ -16,26 +16,46 @@
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Supplier Name</label>
                                     <div class="col-sm-10 form-group">
-                                        <input class="form-control" type="text" name="name">
+                                        <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" value="{{ old('name') }}">
+                                        @error('name')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Supplier Mobile
                                         No</label>
                                     <div class="col-sm-10 form-group">
-                                        <input class="form-control" type="text" name="mobile_no">
+                                        <input class="form-control @error('mobile_no') is-invalid @enderror" type="text" name="mobile_no" value="{{ old('mobile_no') }}">
+                                        @error('mobile_no')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Supplier Email</label>
                                     <div class="col-sm-10 form-group">
-                                        <input class="form-control" type="email" name="email">
+                                        <input class="form-control @error('email') is-invalid @enderror" type="email" name="email" value="{{ old('email') }}">
+                                        @error('email')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Supplier Address</label>
                                     <div class="col-sm-10 form-group">
-                                        <input class="form-control" type="text" name="address">
+                                        <input class="form-control @error('address') is-invalid @enderror" type="text" name="address" value="{{ old('address') }}">
+                                        @error('address')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
 
