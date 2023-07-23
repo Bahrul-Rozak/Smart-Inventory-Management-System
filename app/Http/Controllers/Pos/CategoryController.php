@@ -6,6 +6,8 @@ use Carbon\Carbon;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Pos\Category\StoreCategoryRequest;
+use App\Http\Requests\Pos\Category\UpdateCategoryRequest;
 use Illuminate\Support\Facades\Auth;
 
 class CategoryController extends Controller
@@ -23,7 +25,7 @@ class CategoryController extends Controller
     }
 
 
-    public function CategoryStore(Request $request)
+    public function CategoryStore(StoreCategoryRequest $request)
     {
 
         Category::insert([
@@ -49,7 +51,7 @@ class CategoryController extends Controller
     }
 
 
-    public function CategoryUpdate(Request $request)
+    public function CategoryUpdate(UpdateCategoryRequest $request)
     {
 
         $category_id = $request->id;
