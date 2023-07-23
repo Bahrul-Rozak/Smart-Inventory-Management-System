@@ -11,7 +11,7 @@ class UpdateCustomerRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,26 @@ class UpdateCustomerRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => ['required', 'string', 'max:255'],
+            'mobile_no' => ['required', 'min:9', 'max:15'],
+            'email' => ['required', 'email', 'unique:customers,email,'.$this->id],
+            'address' => ['required', 'string', 'max:255'],
+            'customer_image' => ['required', 'mimes:png,jpg,jpeg'],
+        ];
+    }
+
+    /**
+     * Get custom attributes for validator errors.
+     *
+     * @return array
+     */
+    public function attributes(): array
+    {
+        return [
+            'name' => 'Name',
+            'mobile_no' => 'Mobile Number',
+            'email' => 'Email',
+            'address' => 'Address',
         ];
     }
 }
