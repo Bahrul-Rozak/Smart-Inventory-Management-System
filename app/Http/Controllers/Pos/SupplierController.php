@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Pos;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Pos\Supplier\StoreSupplierRequest;
+use App\Http\Requests\Pos\Supplier\UpdateSupplierRequest;
 use App\Models\Supplier;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -48,7 +49,7 @@ class SupplierController extends Controller
         return view('backend.supplier.supplier_edit', compact('supplier'));
     }
 
-    public function SupplierUpdate(Request $request)
+    public function SupplierUpdate(UpdateSupplierRequest $request)
     {
         $supplierId = $request->id;
         Supplier::findOrfail($supplierId)->update([
