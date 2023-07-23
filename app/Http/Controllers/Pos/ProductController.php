@@ -9,6 +9,8 @@ use App\Models\Category;
 use App\Models\Supplier;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Pos\Product\StoreProductRequest;
+use App\Http\Requests\Pos\Product\UpdateProductRequest;
 use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
@@ -29,7 +31,7 @@ class ProductController extends Controller
         return view('backend.product.product_add', compact('supplier', 'category', 'unit'));
     }
 
-    public function ProductStore(Request $request)
+    public function ProductStore(StoreProductRequest $request)
     {
 
         Product::insert([
@@ -63,7 +65,7 @@ class ProductController extends Controller
 
 
 
-    public function ProductUpdate(Request $request)
+    public function ProductUpdate(UpdateProductRequest $request)
     {
 
         $product_id = $request->id;
