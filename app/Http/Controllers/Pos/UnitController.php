@@ -6,6 +6,8 @@ use Carbon\Carbon;
 use App\Models\Unit;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Pos\Unit\StoreUnitRequest;
+use App\Http\Requests\Pos\Unit\UpdateUnitRequest;
 use Illuminate\Support\Facades\Auth;
 
 class UnitController extends Controller
@@ -24,7 +26,7 @@ class UnitController extends Controller
 
 
 
-    public function UnitStore(Request $request)
+    public function UnitStore(StoreUnitRequest $request)
     {
 
         Unit::insert([
@@ -50,7 +52,7 @@ class UnitController extends Controller
     }
 
 
-    public function UnitUpdate(Request $request)
+    public function UnitUpdate(UpdateUnitRequest $request)
     {
 
         $unit_id = $request->id;

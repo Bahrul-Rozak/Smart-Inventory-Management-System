@@ -17,19 +17,34 @@
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Customer Name </label>
                                     <div class="form-group col-sm-10">
-                                        <input name="name" class="form-control" type="text">
+                                        <input name="name" class="form-control @error('name') is-invalid @enderror" type="text" value="{{ old('name') }}">
+                                        @error('name')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Customer Mobile </label>
                                     <div class="form-group col-sm-10">
-                                        <input name="mobile_no" class="form-control" type="text">
+                                        <input name="mobile_no" class="form-control @error('mobile_no') is-invalid @enderror" type="text" value="{{ old('mobile_no') }}">
+                                        @error('mobile_no')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Customer Email </label>
                                     <div class="form-group col-sm-10">
-                                        <input name="email" class="form-control" type="email">
+                                        <input name="email" class="form-control @error('email') is-invalid @enderror" type="email" value="{{ old('email') }}">
+                                        @error('email')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
 
@@ -37,13 +52,23 @@
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Customer Address
                                     </label>
                                     <div class="form-group col-sm-10">
-                                        <input name="address" class="form-control" type="text">
+                                        <input name="address" class="form-control @error('address') is-invalid @enderror" type="text" value="{{ old('address') }}">
+                                        @error('address')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Customer Image </label>
                                     <div class="form-group col-sm-10">
-                                        <input name="customer_image" class="form-control" type="file" id="image">
+                                        <input name="customer_image" class="form-control @error('customer_image') is-invalid @enderror" type="file" id="image" accept="image/jpg, image/jpeg, image/png">
+                                        @error('customer_image')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="row mb-3">

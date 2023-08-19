@@ -6,6 +6,8 @@ use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Pos\Customer\StoreCustomerRequest;
+use App\Http\Requests\Pos\Customer\UpdateCustomerRequest;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 
@@ -23,9 +25,8 @@ class CustomerController extends Controller
         return view('backend.customer.customer_add');
     }
 
-    public function CustomerStore(Request $request)
+    public function CustomerStore(StoreCustomerRequest $request)
     {
-
         $image = $request->file('customer_image');
         $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension(); // 343434.png
         Image::make($image)->resize(200, 200)->save('upload/customer/' . $name_gen);
@@ -57,7 +58,7 @@ class CustomerController extends Controller
         return view('backend.customer.customer_edit', compact('customer'));
     }
 
-    public function CustomerUpdate(Request $request)
+    public function CustomerUpdate(UpdateCustomerRequest $request)
     {
 
         $customer_id = $request->id;

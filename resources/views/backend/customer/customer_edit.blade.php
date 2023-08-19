@@ -19,30 +19,50 @@
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Customer Name </label>
                                     <div class="form-group col-sm-10">
-                                        <input name="name" value="{{ $customer->name }}" class="form-control"
+                                        <input name="name" value="{{ old('name', $customer->name) }}" class="form-control @error('name') is-invalid @enderror"
                                             type="text">
+                                        @error('name')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Customer Mobile </label>
                                     <div class="form-group col-sm-10">
-                                        <input name="mobile_no" value="{{ $customer->mobile_no }}" class="form-control"
+                                        <input name="mobile_no" value="{{ old('mobile_no', $customer->mobile_no) }}" class="form-control @error('mobile_no') is-invalid @enderror"
                                             type="text">
+                                        @error('mobile_no')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Customer Email </label>
                                     <div class="form-group col-sm-10">
-                                        <input name="email" value="{{ $customer->email }}" class="form-control"
+                                        <input name="email" value="{{ old('email', $customer->email) }}" class="form-control @error('email') is-invalid @enderror"
                                             type="email">
+                                        @error('email')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Customer Address
                                     </label>
                                     <div class="form-group col-sm-10">
-                                        <input name="address" value="{{ $customer->address }}" class="form-control"
+                                        <input name="address" value="{{ old('address', $customer->address) }}" class="form-control @error('address') is-invalid @enderror"
                                             type="text">
+                                        @error('address')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="row mb-3">

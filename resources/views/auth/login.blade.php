@@ -43,13 +43,21 @@
                     <h4 class="text-muted text-center font-size-18"><b>Sign In</b></h4>
 
                     <div class="p-3">
+                        @if(session()->get('errors'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            @foreach($errors->all() as $error)
+                                <p>{{ $error }}</p>
+                            @endforeach
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        @endif
                         <form class="form-horizontal mt-3" action="{{ route('login') }}" method="POST">
                             @csrf
 
                             <div class="form-group mb-3 row">
                                 <div class="col-12">
                                     <input class="form-control" type="text" required="" placeholder="Username"
-                                        id="username" name="username">
+                                        id="username" name="username" value="{{ old('username') }}">
                                 </div>
                             </div>
 
