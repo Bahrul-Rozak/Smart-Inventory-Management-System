@@ -17,8 +17,12 @@
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Unit Name </label>
                                     <div class="form-group col-sm-10">
-                                        <input name="name" value="{{ $unit->name }}" class="form-control"
-                                            type="text">
+                                        <input name="name" class="form-control @error('name') is-invalid @enderror" type="text" value="{{ old('name', $unit->name) }}">
+                                        @error('name')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <input type="submit" class="btn btn-info waves-effect waves-light" value="Update Unit">
